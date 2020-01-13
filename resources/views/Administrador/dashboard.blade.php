@@ -34,7 +34,6 @@
 					<li class="list-group-item list-group-item-danger">Esta plataforma esta en su version Beta</li>
 					<li class="list-group-item">Si elimina algun emprendedor, tambien se eliminaran los proyectos que le pertenezcan</li>
 					<li class="list-group-item">Si borra algun asesor, los proyectos pueden volver a asignarse a otro asesor aunque el proyecto aparezca con el estado "Cursando"</li> 
-					<li class="list-group-item">Si hay algun error favor de reportar con Exdraz_Lpz&#64;outlook.com</li>
  				</ul>
  			</div>
  			<div class="col-sm-4">
