@@ -93,10 +93,6 @@
                     <i class="fas fa-file-download" style="font-size: 35px;"></i>
                   </a>
                   </li>
-
-                  <li>
-                    <div class="fb-share-button" data-href="{{ route('historial.show', $proyecto->id) }}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
-                  </li>
                 </ul>
             </td>
         </tr>

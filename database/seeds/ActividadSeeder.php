@@ -289,5 +289,11 @@ class ActividadSeeder extends Seeder
             'Descripcion' => '',
             'fase_id' => $Fase5,
         ]);
+        Actividad::create([
+
+            'Nombre' => 'Entrega de pdf final',
+            'Descripcion' => '',
+            'fase_id' => $Fase6,
+        ]);
     }
 }

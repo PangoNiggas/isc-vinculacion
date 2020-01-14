@@ -310,6 +310,67 @@
                         @endforelse 
                       </div>
                     </div> 
+
+                    <div class="card">
+                      @forelse ($fases as $fase )
+                         @if($fase->id === 6)
+                     <div class="card-header"  class="card-link" data-toggle="collapse" href="#fase6">
+                       <a>
+                          {{ $fase->NombreFase}}
+                       </a>
+                     </div>
+                     <div id="fase6" class="collapse" data-parent="#accordion">
+                       <div class="card-body">
+                          <div class="alert alert-warning">
+                                 <h5>En un documento colocar todas las fases anteriores y enviarlo en un documento en formato PDF</h5>
+                                 </div>
+                         <table class="table table-bordered">
+                                 <thead class="thead-light">
+                                     <tr>
+                                         <th scope="col">Actividades</th>
+                                     </tr>
+                                 </thead>
+
+                                 <tbody>
+                                   
+                                     <tr>
+                                         <td> 
+                                             <ol>
+                                                  @foreach ($fase->actividades as $actividad)
+                                                   @if($actividad->fase_id === 6)
+                                                 <li>{{ $actividad->Nombre }}</li>
+                                                  <i>
+                                                  {{ $actividad->Descripcion}}</i>
+                                                 @endif
+                                                  @endforeach
+                                             </ol>
+                                            
+                                         </td>
+                                     </tr>
+                                     
+                                     <tr>
+                                         <td>
+                                             @forelse($avancesssss as $avancesss)
+                                           @if($avancesss->Comentario === 'Aprobado')
+                                             <a href="{{ route('Enviar.show',['pro' => Crypt::encrypt($proyectos->id), 'fase' =>  Crypt::encrypt($fase->id)]) }}" class="btn btn-primary">Enviar</a>
+                                              @endif                             
+                                             @empty
+                                             <div class="alert alert-success"> 
+                                               <p>Debes aprobar la quinta fase</p>
+                                             </div>
+                                             @endforelse 
+                                         </td>
+                                     </tr>
+                                 </tbody>
+                             </table>
+                       </div>
+                     </div>
+                     @endif                             
+                         @empty
+                        <td colspan="6" style="text-align: center;"><h4>No Hay fases Registrados</h4></td>
+                     @endforelse 
+                   </div>
+                 </div> 
             </form>
         </div>
     </div>

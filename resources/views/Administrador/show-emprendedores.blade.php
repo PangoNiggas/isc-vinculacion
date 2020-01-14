@@ -21,7 +21,7 @@
 			    <tr>
 				      <th scope="col">Nombre</th>
 				      <th scope="col">Apellidos</th>
-				      <th scope="col">Proyectos</th>
+					  <th scope="col">Proyectos</th>
 				      <th scope="col">Telefono</th>
 				      <th scope="col">RFC</th>
 				      <th scope="col">CURP</th>
@@ -35,7 +35,7 @@
 				      <td>{{ $emprendedor->Nombre}}</td>
 				      <td>{{ $emprendedor->ApellidoP}} {{ $emprendedor->ApellidoM}}</td>
 				      <td>
-									<select name="" class="custom-select">
+									<select name="listaProyectos" class="custom-select">
 											<option disabled="disabled" selected>Proyectos</option>
 												@foreach ($emprendedor->proyectos as $proyecto)
 													<option value="">{{ $proyecto->NombreProd }}</option>
@@ -55,6 +55,7 @@
 						<a href="{{ route('emprendedores.show', $emprendedor->id) }}">
 								<i class="fas fa-file-download" style="font-size: 35px;"></i>
 							</a>
+							<i class="fas fa-eye" style="font-size: 35px;"></i>
 					  </td>
 			    </tr>
 	

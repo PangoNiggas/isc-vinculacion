@@ -55,5 +55,13 @@ class FaseSeeder extends Seeder
                
         
         ]);
+        Fase::create([
+
+            'NombreFase' => 'Plan de Negocios Final',
+            'Estado' => 'En curso',
+            'FechaTerm' => '2020-12-12',
+           
+    
+    ]);
     }
 }

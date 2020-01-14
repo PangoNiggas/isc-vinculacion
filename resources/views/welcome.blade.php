@@ -286,17 +286,17 @@
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.twitter.com">
                     <i class="fab fa-twitter"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.facebook.com">
                     <i class="fab fa-facebook-square"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.likedin.com">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
               </li>

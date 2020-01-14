@@ -15,7 +15,9 @@
 			      			<th scope="col">Apellidos</th>
 			      			<th colspan="2" scope="col">Proyecto</th>
 			      			<th> Status</th>
-			      			<th scope="col">Informacion</th>
+							<th scope="col">Informacion</th>
+							<!--
+							<th scope="col">Descargar Avances</th> --> 
 			    		</tr>
 			  		</thead>
 			  					
@@ -45,7 +47,12 @@
 
 			  			<td>
 			  				<a type="button" class="btn btn-info" href="{{ route('asesor.show', $user->proyecto->emprendedor->id) }}"><i class="fas fa-eye"> Alta de Emprendedor</i></a>							
-			  			</td>
+						</td>
+
+						<!--<td>
+							<a type="button" class="btn btn-info" href="{{ route('asesor.show', $user->proyecto->emprendedor->id) }}"><i class="fas"> Descargar avances</i></a>							
+						</td>  -->
+
 			  		</tr>
 
 			  	@empty

@@ -67,7 +67,8 @@ class EntregasController extends Controller
         $avancess = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 2)->where('proyecto_id', $proyectos->id)->get();
         $avancesss = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 3)->where('proyecto_id', $proyectos->id)->get();
         $avancessss = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 4)->where('proyecto_id', $proyectos->id)->get();
-        return view ('Emprendedor.Entregas', compact('fases', 'empre', 'proyectos', 'avances', 'avancess', 'avancesss', 'avancessss'));
+        $avancesssss = Avance::where('NumeroEntrega', '=', 3)->where('fase_id', '=', 5)->where('proyecto_id', $proyectos->id)->get();
+        return view ('Emprendedor.Entregas', compact('fases', 'empre', 'proyectos', 'avances', 'avancess', 'avancesss', 'avancessss','avancesssss'));
     }
 
     /**

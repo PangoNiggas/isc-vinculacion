@@ -37,7 +37,7 @@ class EnvioController extends Controller
 
      public function store(Request $request)
     {
-        if ($request->hasFile('documento1')) {
+        if ($request->hasFile('documento1')){
         $file = time().request()->documento1->getClientOriginalName();
         $archivo = request()->documento1->storeAs('files',$file);
         $avance = new Avance;
@@ -93,10 +93,23 @@ class EnvioController extends Controller
          else {
             return back()->with('error2', 'error al tratar de subir el archivo en entrega tres');
         }
-         
-           
+    }
 
-           
+    public function entregaFinal(Request $request){
+        if($request->hasFile('documentoFinal')){
+            $docFinal = time().request()->documentoFinal->getClientOriginalName();
+            $archivoF = request()->documentoFinal->storeAs('files',$docFinal);
+            $avance = new Avance;
+            $avance->NumeroEntrega = $request->input('numeroentrega');
+            $avance->Documento = $docFinal;
+            $avance->proyecto_id = $request->input('proyecto');
+            $avance->fase_id = $request->input('fase');
+            $avance->save();    
+            return back()->with('infor4', 'Entrega final realizada');  
+        }
+        else {
+            return back()->with('error2', 'error al tratar de subir el plan de negocios');
+        }
     }
 
 
@@ -112,10 +125,10 @@ class EnvioController extends Controller
         $idfase = $fase->id;
         $avance = Avance::where('NumeroEntrega', '=', 1)->where('proyecto_id', $idpro)->where('fase_id', $idfase)->value('id');
         $avancedos = Avance::where('NumeroEntrega', '=', 2)->where('proyecto_id', $idpro)->where('fase_id', $idfase)->value('id');
-         $avancetres = Avance::where('NumeroEntrega', '=', 3)->where('proyecto_id', $idpro)->where('fase_id', $idfase)->value('id');
-
+        $avancetres = Avance::where('NumeroEntrega', '=', 3)->where('proyecto_id', $idpro)->where('fase_id', $idfase)->value('id');
+        $avanceFinal = Avance::where('NumeroEntrega', '=',4)->where('proyecto_id', $idpro)->where('fase_id', $idfase)->value('id');
     
-        return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase', 'empre', 'avance', 'avancedos', 'avancetres'));
+        return view ('Emprendedor.Entregadoc', compact('proyectos', 'fase', 'empre', 'avance', 'avancedos', 'avancetres','avanceFinal'));
 	}
 
 
